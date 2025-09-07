@@ -1,0 +1,237 @@
+ @font-face {
+  font-family: 'AncientGeek';
+  src: url('AncientGeek.woff') format('woff2');
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url('backg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      line-height: 1.7em;
+    }
+
+    .section {
+      background-color: rgba(0, 0, 0, 0.75);
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 900px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+    /* Navbar Container */
+      .navbar-container {
+      width: 100%;
+      position: relative;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+    }
+
+      .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5rem;
+    }
+
+    /* Logo */
+      .navbar .logo {
+      margin: 0;
+      font-size: 2rem;
+      font-family: 'AncientGeek', serif;
+      color: #C0C0C0;
+      letter-spacing: 1px;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+     .navbar .logo:hover {
+    color: #FFD700;
+    }
+
+    .nav-links {
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+		font-family: 'Cinzel', serif;
+	}
+	.nav-links a {
+		font-size: 1rem;
+		letter-spacing: 0.1rem;
+		text-decoration: none;
+		color: #e7e7e7;
+		transition: color 0.3s ease;
+	}
+	.nav-links a:hover {
+		color: #f0d28a;
+	}
+
+   /*  Explore Button */
+.explore-link .btn {
+  background-color: #a7a7aa;
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+}
+
+.explore-link .btn:hover {
+  background-color: #f0d28a;
+  transform: scale(1.05);
+}
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+      color: gold;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #e0dcd0;
+      margin-bottom: 20px;
+    }
+
+    /* --- Gallery Carousel --- */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%;
+      max-width: 600px;
+      max-height: 600px;
+      border-radius: 5px;
+      flex-shrink: 0;
+    }
+
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      border: none;
+      color: gold;
+      font-size: 2em;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    .carousel button:hover {
+      background: rgba(0,0,0,0.9);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border-radius: 15px;
+      margin-top: 20px;
+      border: none;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      h2 {
+        font-size: 1.6em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      iframe {
+        height: 200px;
+      }
+    }
+
+    /* Loader Overlay */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0d0d0d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    /* Circle Loader */
+    .circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 8px solid #333;
+      border-top-color: gold;
+      animation: filltime 3s linear forwards; 
+      position: relative;
+    }
+
+    /* Inner Glow Icon */
+    .circle::after {
+      content: "⚡";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: gold;
+      text-shadow: 0 0 15px gold, 0 0 30px #f0d28a, 0 0 50px #ffdd66;
+    }
+
+    @keyframes filltime {
+      from { transform: rotate(90deg); }
+      to { transform: rotate(1000deg); } 
+    }

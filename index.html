@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Olympus</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+  <img class="image-gradient" src="gradient.png" alt="bg">
+  <div class="layer-blur"></div>
+
+  
+  <div id="loader">
+    <div class="circle"></div>
+  </div>
+
+  
+  <div class="navbar-container">
+    <header class="navbar">
+      <h1 class="logo">Pantheos</h1>
+      <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="journey.html">GODS AND GODDESSES</a>
+        <a href="myth.html">MYTHS</a>
+        <a href="about.html">ABOUT</a>
+      </nav>
+      <a href="explore.html" class="explore-link">
+        <button class="btn">EXPLORE</button>
+      </a>
+    </header>
+  </div>
+  
+
+  <div class="container">
+    <main>
+      <div class="content">
+        <div class="tag-box">
+          <div class="tag">THE HOUSE OF</div>
+        </div>
+
+        <h1 class="olympus-title">OLYMPUS</h1>
+        <p class="description">
+          Ancient myths hold more than just stories—they hold truth, power, and wonder.
+          Unlock the secrets of a forgotten world.
+        </p>
+      </div>
+
+      <model-viewer class="greek-statue" src="greek.glb" alt="Greek Statue" camera-controls background-color="transparent"></model-viewer>
+    </main>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+
+   <footer style="background-color: #222; color: #f1c40f; text-align: center; padding: 15px 0; font-size: 14px;">
+    &copy; 2025 Keisha Petalco. All rights reserved. <br>
+    This website is for project purposes only.
+</footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

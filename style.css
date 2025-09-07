@@ -1,0 +1,282 @@
+@font-face {
+  font-family: 'GreekFreak';
+  src: url('GreekFreakRegular.woff') format('woff2');
+}
+
+@font-face {
+  font-family: 'AncientGeek';
+  src: url('AncientGeek.woff') format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cinzel', serif;
+  background-color: black;
+  color: #e7e7e7;
+  min-height: 100vh;
+  line-height: 1.5;
+  background-image: url('gradient.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; 
+}
+
+.image-gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+}
+
+.layer-blur {
+  height: 0;
+  width: 30rem;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  box-shadow: 0 0 700px 15px white;
+  rotate: -30deg;
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✅ Navbar Container */
+.navbar-container {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+}
+
+/* ✅ Logo */
+.navbar .logo {
+  margin: 0;
+  font-size: 2rem;
+  font-family: 'AncientGeek', serif;
+  color: #C0C0C0;
+  letter-spacing: 1px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .logo:hover {
+  color: #FFD700;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  color: #e7e7e7;
+}
+
+.nav-links a:hover {
+  color: #f0d28a;
+}
+
+/* Explore Button */
+.explore-link .btn {
+  background-color: #a7a7aa;
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+}
+
+.explore-link .btn:hover {
+  background-color: #f0d28a;
+  transform: scale(1.05);
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 5rem;
+}
+
+.content {
+  max-width: 40rem;
+  margin-left: 5%;
+  z-index: 999;
+  padding-left: 0.5rem;
+}
+
+.tag-box {
+  position: relative;
+  width: 18rem;
+  height: 4rem;
+  border-radius: 50px;
+  background: linear-gradient(to right, #e5decf, #8c744a);
+  background-size: 200%;
+  animation: animationGradient 2.5s linear infinite;
+  box-shadow: 0 0 10px rgba(240, 210, 138, 0.4);
+}
+
+@keyframes animationGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.tag-box .tag {
+  position: absolute;
+  font-size: 1.4rem;
+  inset: 3px 3px 3px 3px;
+  background-color: black;
+  border-radius: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+}
+
+.tag-box .tag:hover {
+  color: #8a6e3f;
+}
+
+.olympus-title {
+  font-size: 7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin: 2rem 0;
+  line-height: 1.2;
+  font-family: 'GreekFreak', serif;
+  color: #FFD700;
+}
+
+.description {
+  font-size: 1.4rem;
+  max-width: 35rem;
+  color: #8a6e3f;
+}
+
+.greek-statue {
+  width: 500px;
+  height: 500px;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+}
+
+.greek-statue:hover {
+  box-shadow: 0 0 40px 10px rgba(248, 243, 243, 0.926);
+  filter: brightness(1);
+  transform: scale(1.02);
+}
+
+.social-icons {
+  position: fixed; 
+  bottom: 15rem;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 0.8rem;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #e7e7e7; 
+  font-size: 24px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* Loader Overlay */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0d0d0d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    /* Circle Loader */
+    .circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 8px solid #333;
+      border-top-color: gold;
+      animation: filltime 3s linear forwards; 
+      position: relative;
+    }
+
+    /* Inner Glow Icon */
+    .circle::after {
+      content: "⚡";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: gold;
+      text-shadow: 0 0 15px gold, 0 0 30px #f0d28a, 0 0 50px #ffdd66;
+    }
+
+    @keyframes filltime {
+      from { transform: rotate(90deg); }
+      to { transform: rotate(1000deg); } 
+    }
+
+    
+    footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #222;
+  color: #f1c40f;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  z-index: 1000;
+}

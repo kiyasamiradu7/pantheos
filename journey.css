@@ -1,0 +1,186 @@
+@font-face {
+		  font-family: 'AncientGeek';
+		  src: url('AncientGeek.woff') format('woff2');
+		}
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			background: #0f0f0f;
+			color: #f5d36c;
+			font-family: 'EB Garamond', serif;
+		}
+
+		/*  Navbar Container */
+		.navbar-container {
+			width: 100%;
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+			background: rgba(0, 0, 0, 0.4);
+			backdrop-filter: blur(6px);
+		}
+		.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem 5rem;
+		}
+		.navbar .logo {
+			margin: 0;
+			font-size: 2rem;
+			font-family: 'AncientGeek', serif;
+			color: #C0C0C0;
+			letter-spacing: 1px;
+			padding: 0.5rem 1.2rem;
+			border-radius: 50px;
+			transition: color 0.3s ease, background-color 0.3s ease;
+		}
+		.navbar .logo:hover { color: #FFD700; }
+		.nav-links { display: flex; align-items: center; gap: 3rem; }
+		.nav-links a {
+			font-size: 1rem;
+			letter-spacing: 0.1rem;
+			text-decoration: none;
+			color: #e7e7e7;
+			transition: color 0.3s ease;
+		}
+		.nav-links a:hover { color: #f0d28a; }
+		.explore-link .btn {
+			background-color: #a7a7aa;
+			color: black;
+			padding: 0.8rem 2rem;
+			border-radius: 50px;
+			border: none;
+			font-size: 1rem;
+			font-weight: 500;
+			transition: background-color 0.3s ease, transform 0.2s ease;
+			cursor: pointer;
+			font-family: 'Cinzel', serif;
+		}
+		.explore-link .btn:hover {
+			background-color: #f0d28a;
+			transform: scale(1.05);
+		}
+
+		/*  Title */
+		h1 {
+			text-align: center;
+			font-family: 'Marcellus SC', serif;
+			font-size: 3rem;
+			color: gold;
+			margin: 40px 0 20px;
+			margin-top: 10px;
+			text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+			letter-spacing: 3px;
+		}
+
+		/*  Section Titles */
+		.section-title {
+			font-size: 2rem;
+			color: #FFD700;
+			margin: 50px 0 20px;
+			margin-top: 12px;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			text-shadow: 0 0 8px rgba(255,215,0,0.7);
+		}
+
+		/*  Cards */
+		.wrapper { padding: 20px 10%; }
+		.box-area {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-gap: 40px;
+			margin-top: 10px;
+		}
+		.box {
+			border-radius: 10px;
+			position: relative;
+			overflow: hidden;
+			box-shadow: 0px 0px 15px rgba(255,215,0,0.4);
+			height: 500px;
+		}
+		.box img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 10px;
+			display: block;
+			transition: transform 0.5s;
+		}
+
+		
+		.overlay {
+			width: 100%;
+			height: 0;
+			background: linear-gradient(transparent, rgba(0,0,0,0.85) 80%);
+			border-radius: 10px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			padding: 0 30px;
+			text-align: center;
+			font-size: 20px;
+			transition: height 0.5s;
+			color: white;
+		}
+		.overlay h3 {
+			font-family: 'Marcellus SC', serif;
+			font-size: 26px;
+			letter-spacing: 2px;
+			margin-bottom: 8px;
+		}
+		.box:hover img { transform: scale(1.1); }
+		.box:hover .overlay { height: 100%; }
+
+        /* Loader Overlay */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0d0d0d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    /* Circle Loader */
+    .circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 8px solid #333;
+      border-top-color: gold;
+      animation: filltime 3s linear forwards; 
+      position: relative;
+    }
+
+    /* Inner Glow Icon */
+    .circle::after {
+      content: "⚡";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: gold;
+      text-shadow: 0 0 15px gold, 0 0 30px #f0d28a, 0 0 50px #ffdd66;
+    }
+
+    @keyframes filltime {
+      from { transform: rotate(90deg); }
+      to { transform: rotate(1000deg); } 
+    }
